@@ -64,7 +64,7 @@ Client.prototype.isSendDiagnostic = function() {
         return true;
     }
 
-    if (this._diagnostic.samplingStrategy !== 'probability') {
+    if (this._diagnostic.samplingStrategy !== 'time') {
         return (Math.random() * 100 < sampleRate);
     } else {
         this._diagnostic.msgIndex = this._diagnostic.msgIndex || 0;
