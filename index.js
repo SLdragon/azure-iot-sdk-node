@@ -78,13 +78,15 @@ Client.prototype.getTwin = function(done, twin) {
     var _this = this;
     Client.super_.prototype.getTwin.call(this, function(err, twin) {
         if (!err) {
-            twin.on('properties.desired', function(delta) {
+            twin.prependListener('properties.desired', function(delta) {
                 if (delta['diag_enable'] !== undefined) {
                     _this._diagnostic.diagEnable = delta['diag_enable'];
+                    delete delta['diag_enable'];
                 }
 
                 if (delta['diag_sample_rate'] !== undefined) {
                     _this._diagnostic.diagSampleRate = delta['diag_sample_rate'];
+                    delete delta['diag_sample_rate'];
                 }
             });
         }
