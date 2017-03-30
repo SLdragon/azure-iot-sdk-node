@@ -1,0 +1,16 @@
+{
+  "name": "azure-iot-device-diagnostics",
+  "version": "1.0.0",
+  "description": "Azure IoT device SDK with diagnostics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^2.0.1",
+    "azure-iot-device": "1.1.7",
+    "azure-iot-device-mqtt": "1.1.7"
+  }
+}
